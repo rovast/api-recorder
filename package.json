@@ -4,7 +4,7 @@
   "description": "A tool for recording your api",
   "main": "build/index.js",
   "bin": {
-    "record-api": "build/index.js"
+    "api-recorder": "build/index.js"
   },
   "scripts": {
     "start": "npm run build && node build/index.js",
