@@ -1,4 +1,5 @@
 export declare type Config = {
+  name: string,
   browser: string,
   output: string,
   match: string,
