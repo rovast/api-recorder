@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import puppeteer, {Browser, HTTPResponse, Page} from 'puppeteer-core'
 import {ERROR, INFO, FLASH} from "./shared"
 import {Config, Header, PostmanCollection} from "./types"
