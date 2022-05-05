@@ -37,11 +37,19 @@ record-api
 
 ## 配置
 
-| Option      | Shortcut | default                                                        | 说明                           |
-|-------------|----------|----------------------------------------------------------------|------------------------------|
-| `--match`   | `-m`     | `/api/`                                                        | 根据路径匹配，录制哪些 API              |
-| `--output`  | `-o`     | `postman-collection.json`                                      | 生成的可以导入至 postman 的 json 文件路径 |
-| `--browser` | `-b`     | `/Applications/Google Chrome.app/Contents/MacOS/Google Chrome` | 浏览器的可执行文件路径                  |
+```bash
+
+Usage: index [options]
+
+A tool for record your api
+
+Options:
+  -n, --name <name>             collection name (default: "record-api")
+  -o, --output <output_file>    output json file path (default: "postman-collection.json")
+  -b, --browser <execute_path>  browser execute path (default: "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome")
+  -m, --match <regex>           match the api path (default: "/api/")
+  -h, --help                    display help for command
+```
 
 
 ## 贡献

@@ -1,5 +1,5 @@
 {
-  "name": "api-recorder",
+  "name": "@rovast/api-recorder",
   "version": "0.0.1",
   "description": "A tool for recording your api",
   "main": "build/index.js",
@@ -22,5 +22,13 @@
     "rimraf": "^3.0.2",
     "ts-node": "^10.7.0",
     "typescript": "^4.6.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rovast/record-api"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rovast/record-api/issues"
   }
 }
