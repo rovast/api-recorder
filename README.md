@@ -1,5 +1,11 @@
 # record-api
 
+[![GitHub issues](https://img.shields.io/github/issues/rovast/record-api)](https://github.com/rovast/record-api/issues)
+
+[![GitHub license](https://img.shields.io/github/license/rovast/record-api)](https://github.com/rovast/record-api)
+
+[![npm version](https://badge.fury.io/js/@rovast%2Fapi-recorder.svg)](https://badge.fury.io/js/@rovast%2Fapi-recorder)
+
 [简体中文](README.md) | [English](README-en.md)
 
 ---
@@ -22,7 +28,7 @@
 ### 1. 安装
 
 ```bash
-npm install -g record-api
+npm i -g @rovast/api-recorder
 ```
 
 ### 2. 使用
