@@ -1,10 +1,20 @@
-# record-api
+# api-recorder
 
-[![GitHub issues](https://img.shields.io/github/issues/rovast/record-api)](https://github.com/rovast/record-api/issues)
 
-[![GitHub license](https://img.shields.io/github/license/rovast/record-api)](https://github.com/rovast/record-api)
+<p align="center">
+  <a href="https://img.shields.io/github/issues/rovast/record-api/issues">
+    <img src="https://img.shields.io/github/issues/rovast/record-api" height="18"
+         alt="Issues"></a>
+  
+  <a href="https://img.shields.io/github/license/rovast/record-api">
+    <img src="https://img.shields.io/github/license/rovast/record-api" height="18"
+         alt="GitHub license"></a>
+  
+  <a href="https://www.npmjs.com/package/@rovast/api-recorder">
+    <img src="https://badge.fury.io/js/@rovast%2Fapi-recorder.svg" height="18"
+         alt="GitHub license"></a>
+</p>
 
-[![npm version](https://badge.fury.io/js/@rovast%2Fapi-recorder.svg)](https://badge.fury.io/js/@rovast%2Fapi-recorder)
 
 [简体中文](README.md) | [English](README-en.md)
 
@@ -34,7 +44,7 @@ npm i -g @rovast/api-recorder
 ### 2. 使用
 
 ```bash
-record-api
+api-recorder
 ```
 
 会自动打开浏览器，直接访问自己需要录制的网站即可。
