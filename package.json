@@ -1,0 +1,26 @@
+{
+  "name": "api-recorder",
+  "version": "0.0.1",
+  "description": "A tool for recording your api",
+  "main": "build/index.js",
+  "bin": {
+    "record-api": "build/index.js"
+  },
+  "scripts": {
+    "start": "npm run build && node build/index.js",
+    "start:dev": "nodemon",
+    "build": "rimraf ./build && tsc"
+  },
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "commander": "^9.2.0",
+    "moment": "^2.29.3",
+    "puppeteer-core": "^13.5.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15",
+    "rimraf": "^3.0.2",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.3"
+  }
+}
