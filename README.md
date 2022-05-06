@@ -2,6 +2,9 @@
 
 
 <p align="center">
+  <a href="https://github.com/rovast/api-recorder/actions/workflows/build.yml">
+    <img src="https://github.com/rovast/api-recorder/actions/workflows/build.yml/badge.svg" height="18"
+         alt="GitHub action"></a>
   <a href="https://img.shields.io/github/issues/rovast/record-api/issues">
     <img src="https://img.shields.io/github/issues/rovast/record-api" height="18"
          alt="Issues"></a>
