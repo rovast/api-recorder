@@ -1,6 +1,6 @@
 {
   "name": "@rovast/api-recorder",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A tool for recording your api",
   "main": "build/index.js",
   "bin": {

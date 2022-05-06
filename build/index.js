@@ -19,10 +19,11 @@ const url_1 = __importDefault(require("url"));
 const fs_1 = __importDefault(require("fs"));
 const commander_1 = require("commander");
 let Config;
+let Target;
 // @ts-ignore
 const PostmanCollection = {
     info: {
-        name: Config.name,
+        name: 'api-recorder',
         schema: "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
     },
     // @ts-ignore
@@ -32,12 +33,13 @@ function setupConfiguration() {
     const program = new commander_1.Command();
     program
         .description('A tool for record your api')
-        .option('-n, --name <name>', 'collection name', 'record-api')
+        .option('-n, --name <name>', 'collection name', 'api-recorder')
         .option('-o, --output <output_file>', 'output json file path', 'postman-collection.json')
         .option('-b, --browser <execute_path>', 'browser execute path', '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome')
         .option('-m, --match <regex>', 'match the api path', '/api/');
     program.parse(process.argv);
     Config = program.opts();
+    PostmanCollection.info.name = Config.name;
 }
 function launchAPP() {
     return __awaiter(this, void 0, void 0, function* () {
@@ -46,10 +48,11 @@ function launchAPP() {
             executablePath: Config.browser,
             headless: false,
             userDataDir: './user-data',
-            defaultViewport: { width: 1366, height: 768 }
+            defaultViewport: null
         });
         (0, shared_1.INFO)('Open new page');
         const page = yield browser.newPage();
+        Target = page.target();
         return { browser, page };
     });
 }
@@ -65,11 +68,13 @@ function headerObjToKV(headers) {
 }
 function listenBrowserEvents(browser) {
     // page close event or browser close event
-    browser.on('targetdestroyed', (_) => __awaiter(this, void 0, void 0, function* () {
-        (0, shared_1.ERROR)('Page close, write postman collection to file');
-        yield fs_1.default.writeFileSync(Config.output, JSON.stringify(PostmanCollection), { flag: 'w' });
-        (0, shared_1.FLASH)('EXIT process');
-        process.exit(0);
+    browser.on('targetdestroyed', (target) => __awaiter(this, void 0, void 0, function* () {
+        if (target === Target) {
+            (0, shared_1.ERROR)('Page close, write postman collection to file');
+            yield fs_1.default.writeFileSync(Config.output, JSON.stringify(PostmanCollection), { flag: 'w' });
+            (0, shared_1.FLASH)('EXIT process');
+            process.exit(0);
+        }
     }));
 }
 function listenPageEvents(page) {
