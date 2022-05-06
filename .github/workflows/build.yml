@@ -1,4 +1,4 @@
-name: publish
+name: build
 
 on:
   push:
@@ -12,7 +12,7 @@ jobs:
     steps:
     - name: checkout code
       uses: actions/checkout@v3
-        
+
     - name: cache node modules
       uses: actions/cache@v3
       id: cache
@@ -21,7 +21,7 @@ jobs:
         key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
         restore-keys: |
           ${{ runner.os }}-node-
-            
+
     - name: install dependencies
       if: steps.cache.outputs.cache-hit != 'true'
       run: npm install
@@ -33,4 +33,4 @@ jobs:
       with:
         check-version: true
         token: ${{ secrets.NPM_TOKEN }}
-      
+
